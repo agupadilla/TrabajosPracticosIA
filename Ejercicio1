@@ -1,0 +1,158 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Ejercicio 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Enunciado"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. Instalar el entorno Python y un IDE de su elección para la próxima clase. Las clases van a estar enfocadas en Python y es muy recomendable que los ejercicios sean realizados en dicho lenguaje, pero pueden utilizar cualquier lenguaje a elección (en tal caso,tener en cuenta que muchos lenguajes no tienen un ecosistema amplio de librerías de ML).\n",
+    "\n",
+    "2. Realizar una práctica básica con numpy: dadas las matrices de la ﬁgura “Matrices Ejercicio Clase 1”\n",
+    "\n",
+    "    * Construir las matrices en numpy \n",
+    "    * Hacer con dichas matrices $A-B^{t}$ e imprimir su resultado. \n",
+    "    * Hacer con dichas matrices $(A.B)^{-1}$ e imprimir su resultado\n",
+    "\n",
+    "![image](https://k61.kn3.net/6/C/3/4/9/4/981.jpg)\n",
+    "\n",
+    "\n",
+    "  Recomendación: Usar un notebook de jupyter para hacer los ejercicios. \n",
+    "  \n",
+    "  Fecha de entrega: 03/04/2017.\n",
+    "  \n",
+    "  Formato para entregar los ejercicios: Enviar a inteligenciafrvm@gmail.com el link del ejercicio en su Github donde esté alojada la implementación semanal. Alternativamente, enviar el link del Gist público o privado donde está alojado el código. Lo ideal que estén los commits paso a paso para ver cómo se fue llevando a cabo el desarrollo del ejercicio. \n",
+    "  \n",
+    "  Aclaración: Los ejercicios deben ser resueltos de forma individual.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Desarrollo"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. Se instaló y se utilizó la distribución Anaconda.\n",
+    "2. Para llevar a cabo el ejercicio, como primer medida, se realizaron las siguientes importaciones:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from numpy import matrix\n",
+    "from numpy.linalg import inv"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Luego se procedió a declarar las matrices."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "A = matrix([[1,2,3],[4,5,6]]) \n",
+    "B = matrix([[-1,0],[1,1],[0,1]]) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Seguido a esto, se realizaron los cálculos pedidos en el ejercicio."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "calculo1 = A - B.transpose()\n",
+    "calculo2 = inv((A*B))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Los resultados de los cálculos se muestran a continuación: "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Resultado del primer calculo:  [[2 1 3]\n",
+      " [4 4 5]]\n",
+      "Resultado del segundo calculo:  [[ 1.83333333 -0.83333333]\n",
+      " [-0.16666667  0.16666667]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"Resultado del primer cálculo: \" , calculo1)\n",
+    "print(\"Resultado del segundo cálculo: \" , calculo2)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
